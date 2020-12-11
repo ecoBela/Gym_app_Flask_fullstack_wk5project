@@ -10,3 +10,6 @@ class TestActivity(unittest.TestCase):
 
     def test_activity_has_id(self):
         self.assertEqual(None, self.activity1.id)
+
+    def test_activity_has_upcoming_event(self):
+        self.assertEqual(True, self.activity1.upcoming)
