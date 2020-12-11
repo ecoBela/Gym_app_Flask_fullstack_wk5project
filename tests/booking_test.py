@@ -15,3 +15,6 @@ class TestBooking(unittest.TestCase):
     def test_booking_has_activity(self):
         self.assertEqual(self.activity1, self.booking1.activity)
     
+    def test_booking_has_id(self):
+        self.assertEqual(None, self.booking1.id)
+    
