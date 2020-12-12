@@ -3,7 +3,7 @@ from models.member import Member
 from models.activity import Activity
 
 # CRUD: create
-def save(member)
+def save(member):
     sql = "INSERT INTO members ( name ) VALUES ( %s ) RETURNING id"
     values = [member.name]
     results = run_sql(sql, values)
@@ -19,4 +19,7 @@ def save(member)
 # def update()
 
 #CRUD: delete
-#delete_all()
+def delete_all():
+    sql = "DELETE FROM members"
+    run_sql(sql)
+

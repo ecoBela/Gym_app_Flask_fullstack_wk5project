@@ -5,3 +5,8 @@ from models.booking import Booking
 import repositories.member_repository as member_repository
 import repositories.activity_repository as activity_repository
 import repositories.booking_repository as booking_repository
+
+member_repository.delete_all
+
+member1 = Member("Bojo the Imbecile")
+member_repository.save(member1)
