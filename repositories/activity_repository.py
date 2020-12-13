@@ -11,6 +11,13 @@ def save(activity):
     activity.id = results[0]['id']
     return activity
 
+
+# Update
+def update(activity):
+    sql = "UPDATE activities SET (name, upcoming) = ( %s, %s) WHERE id = %s"
+    values = [activity.name, activity.upcoming, activity.id]
+    run_sql(sql, values)
+
 # def select_all():
 #     sql = 
 
