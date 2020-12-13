@@ -14,8 +14,13 @@ member_repository.save(member1)
 member2 = Member("Pretty-unkind Patel")
 member_repository.save(member2)
 
-activity1 = Activity("Compassion cultivator", True)
+member1 = Member("Dumpy Truck")
+member_repository.update(member1)
+
+activity1 = Activity("Compassion Crunches", True)
 activity_repository.save(activity1)
 activity2 = Activity("Empathy Stretcher", False)
 activity_repository.save(activity2)
+activity3 = Activity("Kundalini Kindness", True)
+activity_repository.save(activity3)
 

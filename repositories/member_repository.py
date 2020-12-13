@@ -15,8 +15,14 @@ def save(member):
 #Do we need a def select() here?
 
 
+
 #CRUD: update
-# def update()
+def update(member):
+    sql = "UPDATE members SET name = %s WHERE id = %s"
+    values = [member.name, member.id]
+    run_sql(sql, values)
+    
+
 
 #CRUD: delete
 def delete_all():

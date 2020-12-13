@@ -11,6 +11,9 @@ def save(activity):
     activity.id = results[0]['id']
     return activity
 
+# def select_all():
+#     sql = 
+
 def delete_all():
     sql = "DELETE FROM activities"
     run_sql(sql)
