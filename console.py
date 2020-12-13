@@ -24,6 +24,8 @@ activity_repository.save(activity2)
 activity3 = Activity("Kundalini Kindness", True)
 activity_repository.save(activity3)
 
+activity_repository.select_all()
+
 activity1 = Activity("Compassion Crunches", False)
 activity_repository.update(activity1)
 

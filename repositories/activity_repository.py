@@ -12,6 +12,12 @@ def save(activity):
     return activity
 
 
+# Read
+def select_all():
+    sql = "SELECT * FROM activities WHERE upcoming = True"
+    results = run_sql(sql)
+    return results
+
 # Update
 def update(activity):
     sql = "UPDATE activities SET (name, upcoming) = ( %s, %s) WHERE id = %s"
