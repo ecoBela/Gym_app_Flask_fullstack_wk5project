@@ -1,10 +1,17 @@
 from db.run_sql import run_sql
-from models.member import Member
-from models.activity import Activity
+from models.booking import Booking
+
 
 #CRUD
 
 ## Create
+def save(booking):
+    sql = "INSERT INTO bookings ( member_id, activity_id ) VALUES (%s, %s) RETURNING id"
+    values = [booking.member.id, booking.activity.id]
+    results = run_sql(sql, values)
+    booking.id = results[0]['id']
+    return booking
+
 
 ## Read
 
