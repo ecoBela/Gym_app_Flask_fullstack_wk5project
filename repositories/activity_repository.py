@@ -24,8 +24,6 @@ def update(activity):
     values = [activity.name, activity.upcoming, activity.id]
     run_sql(sql, values)
 
-# def select_all():
-#     sql = 
 
 def delete_all():
     sql = "DELETE FROM activities"

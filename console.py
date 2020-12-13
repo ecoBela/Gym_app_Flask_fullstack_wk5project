@@ -8,6 +8,7 @@ import repositories.booking_repository as booking_repository
 
 member_repository.delete_all()
 activity_repository.delete_all()
+booking_repository.delete_all()
 
 member1 = Member("Bojo the Imbecile")
 member_repository.save(member1)
@@ -28,4 +29,7 @@ activity_repository.select_all()
 
 activity1 = Activity("Compassion Crunches", False)
 activity_repository.update(activity1)
+
+booking1 = Booking(member2, activity3)
+booking_repository.save(booking1)
 
