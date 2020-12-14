@@ -26,12 +26,6 @@ def create_member():
     return redirect ("/")
     
 
-
-# def create_human():
-#     name = request.form["name"]
-#     new_human = Human(name)
-#     human_repository.save(new_human)
-#     return redirect("/humans")
     
 # SHOW
 
@@ -39,7 +33,7 @@ def create_member():
 # remember to change the route to members/<id>
 @members_blueprint.route("/members/<id>") 
 def show_member(id):
-    member = member_repository.select(id)
+    member_repository.select(id)
     return render_template("members/show.html")
 
 
@@ -52,5 +46,6 @@ def edit_member():
 
 # UPDATE
 #/members/id: PUT will add edits to db but should redirect user to home page afterwards
+
 
 # DELETE
