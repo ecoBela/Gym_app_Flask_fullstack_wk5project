@@ -13,7 +13,14 @@ def save(member):
 
 #CRUD: read
 #Do we need a def select() here?
-
+def select_all():
+    members = []
+    sql = "SELECT * FROM members"
+    results = run_sql(sql)
+    for result in results:
+        member = Member(result["name"], result["id"])
+        members.append(member)
+    return members
 
 
 
