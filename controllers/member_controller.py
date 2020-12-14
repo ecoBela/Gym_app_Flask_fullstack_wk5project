@@ -12,6 +12,9 @@ def members():
     return render_template("members/index.html")
 
 #/members/new: GET, will render new.html page displaying form
+@members_blueprint.route("/members/new")
+def new_member():
+    return render_template("members/new.html")
 
 #/members: POST, will add member to db but should redirect user to home page afterwards
 
