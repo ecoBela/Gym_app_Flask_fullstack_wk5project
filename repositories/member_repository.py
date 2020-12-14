@@ -16,6 +16,7 @@ def save(member):
 
 
 
+
 #CRUD: update
 def update(member):
     sql = "UPDATE members SET name = %s WHERE id = %s"
