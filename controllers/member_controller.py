@@ -25,9 +25,12 @@ def new_member():
 #/members/id: GET, will render the show.html page displaying member
 # remember to change the route to members/<id>
 @members_blueprint.route("/members/4") 
-def edit_member():
+def show_member():
     return render_template("members/show.html")
 
 #/members/edit: GET, will render edit.html page displaying form
+@members_blueprint.route("/members/edit")
+def edit_member():
+    return render_template("members/edit.html")
 
 #/members/id: PUT will add edits to db but should redirect user to home page afterwards
