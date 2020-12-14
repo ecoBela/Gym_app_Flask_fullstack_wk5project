@@ -22,6 +22,13 @@ def select_all():
         members.append(member)
     return members
 
+def select(id):
+    sql = "SELECT * FROM members WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    member = Member(result["name"], result["id"])
+    return member
+
 
 
 #CRUD: update
