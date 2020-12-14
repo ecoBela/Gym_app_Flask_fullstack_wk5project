@@ -4,7 +4,7 @@ from models.booking import Booking
 
 #CRUD
 
-## Create
+## Create - books member into specific class
 def save(booking):
     sql = "INSERT INTO bookings ( member_id, activity_id ) VALUES (%s, %s) RETURNING id"
     values = [booking.member.id, booking.activity.id]

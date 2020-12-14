@@ -16,7 +16,7 @@ member2 = Member("Pretty-unkind Patel")
 member_repository.save(member2)
 member3 = Member("Lyca Sturgeon")
 member_repository.save(member3)
-member4 = Member("Dumpy Trunk")
+member4 = Member("Dumpy Truck")
 member_repository.save(member4)
 
 activity1 = Activity("Compassion Cultivator", True)
