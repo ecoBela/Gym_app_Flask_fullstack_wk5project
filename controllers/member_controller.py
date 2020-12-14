@@ -7,7 +7,9 @@ members_blueprint = Blueprint("members", __name__)
 #routes
 
 #/members: GET, will render index.html page displaying options
-
+@members_blueprint.route("/members")
+def members():
+    return render_template("members/index.html")
 
 #/members/new: GET, will render new.html page displaying form
 
