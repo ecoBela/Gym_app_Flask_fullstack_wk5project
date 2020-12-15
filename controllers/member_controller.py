@@ -29,7 +29,7 @@ def create_member():
     name = request.form["name"]
     new_member = Member(name)
     member_repository.save(new_member)
-    return redirect ("/")
+    return redirect ("/members")
     
 
 
@@ -49,10 +49,9 @@ def edit_member(id):
 @members_blueprint.route("/members/<id>", methods=["POST"])
 def update_member(id):
     name = request.form["name"]
-    member = Member(name)
-    member_id = member_repository.select(member_id)
+    member = Member(name, id)
     member_repository.update(member)
-    return redirect('/')
+    return redirect('/members')
 
 
 
