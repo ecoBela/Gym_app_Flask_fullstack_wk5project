@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.activity import Activity
 import repositories.activity_repository as activity_repository
@@ -16,7 +16,19 @@ def activities():
 @activities_blueprint.route("/activities/new")
 def new_activity():
     return render_template("activities/new.html")
+
+
 # CREATE, 
+@activities_blueprint.route("/activities", methods=['POST'])
+def create_activity():
+    activity_name = request.form["name"]
+    new_activity = Activity(activity_name, True)
+    activity_repository.save(new_activity)
+    return redirect("/activities")
+
+
+
+
 # EDIT
 # UPDATE
 # SHOW

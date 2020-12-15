@@ -11,7 +11,7 @@
 <h1>List all activities</h1>
 
 {% for activity in activities%}
-    {{activity.name}} <br>
+    {{activity.name}} <a href="/activities/{{activity.id}}/edit">Update activity</a><br>
     <br>
 {% endfor %}
 
