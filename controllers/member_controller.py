@@ -32,8 +32,6 @@ def create_member():
     return redirect ("/members")
     
 
-
-
 #EDIT
 
 #/members/edit: GET, will render edit.html page displaying form

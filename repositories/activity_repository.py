@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.activity import Activity
 from models.member import Member
+import pdb
 
 # CRUD
 # Create
@@ -22,6 +23,12 @@ def select_all():
 def select_all_including_past():
     sql = "SELECT * FROM activities"
     results = run_sql(sql)
+    return results
+
+def select(id):
+    sql = "SELECT * FROM activities WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)[0]
     return results
 
 # Update

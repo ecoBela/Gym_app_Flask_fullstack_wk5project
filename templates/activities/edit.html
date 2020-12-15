@@ -1,0 +1,14 @@
+<h1>Edit activity details</h1>
+<br>
+<br>
+
+
+
+<form action="/activities/{{activity.id}}" method="post">
+    <div>
+        <label for="name">Enter activity name:</label>
+        <input type="text" id="name" name="name" value = "{{activity.name}}">
+        <input type="submit">
+    </div>
+</form>
+

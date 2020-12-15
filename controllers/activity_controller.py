@@ -27,8 +27,21 @@ def create_activity():
     return redirect("/activities")
 
 
-
-
 # EDIT
+
+@activities_blueprint.route("/activities/<id>/edit", methods=['GET'])
+def edit_activity(id):
+    activity = activity_repository.select(id)
+    return render_template("activities/edit.html", activity = activity)
+
+
+
 # UPDATE
+
+@activities_blueprint.route("/activities/<id>", methods=["POST"])
+def update_activity(id):
+    name = request.form["name"]
+    activity = Activity(name, upcoming, id)
+    activity_repository.update(activity)
+    return redirect('/activities')
 # SHOW
