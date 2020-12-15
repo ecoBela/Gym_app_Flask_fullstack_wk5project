@@ -37,9 +37,10 @@ def create_member():
 #EDIT
 
 #/members/edit: GET, will render edit.html page displaying form
-@members_blueprint.route("/members/<id>/edit")
-def edit_member():
-    return render_template("members/edit.html")
+@members_blueprint.route("/members/<id>/edit", methods=['GET'])
+def edit_member(id):
+    member = member_repository.select(id)
+    return render_template("members/edit.html", member = member)
 
 # UPDATE
 # /members/id: PUT will add edits to db but should redirect user to home page afterwards
