@@ -8,12 +8,9 @@ activities_blueprint = Blueprint("activties", __name__)
 # INDEX
 @activities_blueprint.route("/activities")
 def activities():
-    return render_template("activities/index.html")
+    activities = activity_repository.select_all_including_past()
+    return render_template("activities/index.html", activities = activities)
 
-# @members_blueprint.route("/members")
-# def members():
-#     members = member_repository.select_all()
-#     return render_template("members/index.html", members = members)
 # NEW
 # CREATE, 
 # EDIT

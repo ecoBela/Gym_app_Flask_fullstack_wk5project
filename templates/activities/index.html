@@ -6,6 +6,15 @@
 
 <h1>List all activities</h1>
 
+{% for activity in activities%}
+    {{activity.name}} <br>
+    <br>
+{% endfor %}
+
+
+<br>
+<br>
+
 <a href="">Display members by activity</a>
 
 {% endblock %}
