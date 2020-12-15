@@ -5,10 +5,16 @@ import repositories.member_repository as member_repository
 
 members_blueprint = Blueprint("members", __name__)
 
+
+
+
+
+
 #INDEX
 @members_blueprint.route("/members")
 def members():
-    return render_template("members/index.html")
+    members = member_repository.select_all()
+    return render_template("members/index.html", members = members)
 
 # NEW
 @members_blueprint.route("/members/new")
@@ -27,14 +33,6 @@ def create_member():
     
 
 
-#SHOW
-#/members/id: GET, will render the show.html page displaying member
-# remember to change the route to members/<id>
-@members_blueprint.route("/members/show") 
-def show_all_members():
-    member_repository.select_all()
-    return render_template("members/show.html")
-
 
 #EDIT
 
@@ -52,5 +50,13 @@ def update_member(id):
     member_repository.update(member)
     return redirect("/")
 
+
+#SHOW
+#/members/id: GET, will render the show.html page displaying member
+# remember to change the route to members/<id>
+@members_blueprint.route("/members/show") 
+def show_all_members():
+    member_repository.select_all()
+    return render_template("members/show.html")
 
 # DELETE
