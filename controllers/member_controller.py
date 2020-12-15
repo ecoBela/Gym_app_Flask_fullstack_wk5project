@@ -37,7 +37,7 @@ def create_member():
 #EDIT
 
 #/members/edit: GET, will render edit.html page displaying form
-@members_blueprint.route("/members/edit")
+@members_blueprint.route("/members/<id>/edit")
 def edit_member():
     return render_template("members/edit.html")
 

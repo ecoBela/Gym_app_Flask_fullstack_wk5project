@@ -6,7 +6,11 @@
 <br>
 <br>
 
-{{members}}
+{% for member in members %}
+    {{member.name}} 
+    <br>
+    <br>
+{% endfor %}
 <br>
 <br>
 
