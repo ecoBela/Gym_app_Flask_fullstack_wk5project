@@ -26,14 +26,13 @@ def create_member():
     return redirect ("/")
     
 
-    
-# SHOW
 
+#SHOW
 #/members/id: GET, will render the show.html page displaying member
 # remember to change the route to members/<id>
-@members_blueprint.route("/members/<id>") 
-def show_member(id):
-    member_repository.select(id)
+@members_blueprint.route("/members/show") 
+def show_all_members():
+    member_repository.select_all()
     return render_template("members/show.html")
 
 
@@ -45,7 +44,13 @@ def edit_member():
     return render_template("members/edit.html")
 
 # UPDATE
-#/members/id: PUT will add edits to db but should redirect user to home page afterwards
+# /members/id: PUT will add edits to db but should redirect user to home page afterwards
+@members_blueprint.route("/members/<id>", methods=["PUT"])
+def update_member(id):
+    name = request.form["name"]
+    member = Member(name, id)
+    member_repository.update(member)
+    return redirect("/")
 
 
 # DELETE
