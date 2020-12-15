@@ -6,10 +6,10 @@
 
 
 
-<form action="" method="PUT">
+<form action="/members/{{member.id}}" method="post">
     <div>
         <label for="name">Edit full name:</label>
-        <input type="text" id="name" name="name" value = "">
+        <input type="text" id="name" name="name" value = "{{member.name}}">
         <input type="submit">
     </div>
 </form>

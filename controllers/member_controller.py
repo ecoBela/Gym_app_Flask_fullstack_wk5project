@@ -42,14 +42,18 @@ def edit_member(id):
     member = member_repository.select(id)
     return render_template("members/edit.html", member = member)
 
+
+
 # UPDATE
 # /members/id: PUT will add edits to db but should redirect user to home page afterwards
-@members_blueprint.route("/members/<id>", methods=["PUT"])
+@members_blueprint.route("/members/<id>", methods=["POST"])
 def update_member(id):
     name = request.form["name"]
-    member = Member(name, id)
+    member = Member(name)
+    member_id = member_repository.select(member_id)
     member_repository.update(member)
-    return redirect("/")
+    return redirect('/')
+
 
 
 #SHOW
