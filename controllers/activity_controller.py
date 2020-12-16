@@ -22,7 +22,13 @@ def new_activity():
 @activities_blueprint.route("/activities", methods=['POST'])
 def create_activity():
     activity_name = request.form["name"]
-    new_activity = Activity(activity_name, True)
+    # upcoming = request.form["upcoming"] except:
+    try:
+        upcoming = request.form["upcoming"]
+    except: 
+        upcoming = False
+    
+    new_activity = Activity(activity_name, upcoming)
     activity_repository.save(new_activity)
     return redirect("/activities")
 
@@ -41,6 +47,12 @@ def edit_activity(id):
 @activities_blueprint.route("/activities/<id>", methods=["POST"])
 def update_activity(id):
     name = request.form["name"]
+    # upcoming = request.form["upcoming"]
+    try:
+        upcoming = request.form["upcoming"]
+    except: 
+        upcoming = False
+
     activity = Activity(name, upcoming, id)
     activity_repository.update(activity)
     return redirect('/activities')
