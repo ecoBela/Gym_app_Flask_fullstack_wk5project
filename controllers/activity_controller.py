@@ -14,17 +14,15 @@ def activities():
     return render_template("activities/index.html", activities = activities, upcoming=upcoming)
 
 # NEW
-
 @activities_blueprint.route("/activities/new")
 def new_activity():
     return render_template("activities/new.html")
 
 
-# CREATE, 
+# CREATE
 @activities_blueprint.route("/activities", methods=['POST'])
 def create_activity():
     activity_name = request.form["name"]
-    # upcoming = request.form["upcoming"] except:
     try:
         upcoming = request.form["upcoming"]
     except: 
@@ -43,7 +41,6 @@ def show_members(id):
     return render_template("activities/show.html", members=members)
 
 # EDIT
-
 @activities_blueprint.route("/activities/<id>/edit", methods=['GET'])
 def edit_activity(id):
     activity = activity_repository.select(id)
@@ -51,7 +48,6 @@ def edit_activity(id):
 
 
 # UPDATE
-
 @activities_blueprint.route("/activities/<id>", methods=["POST"])
 def update_activity(id):
     name = request.form["name"]

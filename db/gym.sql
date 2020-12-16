@@ -13,6 +13,7 @@ CREATE TABLE activities(
     name VARCHAR(255),
     upcoming BOOLEAN
 );
+
 CREATE TABLE bookings(
     id SERIAL PRIMARY KEY,
     member_id INT REFERENCES members(id) ON DELETE CASCADE,
