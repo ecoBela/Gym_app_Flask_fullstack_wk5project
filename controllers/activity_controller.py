@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.activity import Activity
 import repositories.activity_repository as activity_repository
+import pdb
 
 activities_blueprint = Blueprint("activties", __name__)
 
@@ -36,7 +37,8 @@ def create_activity():
 # SHOW
 @activities_blueprint.route("/activities/<id>/show", methods=['GET'])
 def show_members(id):
-    members = activity_repository.get_members(id)
+    activity = activity_repository.select(id)
+    members = activity_repository.get_members(activity)
     return render_template("/activities/show.html", members=members)
 
 # EDIT
