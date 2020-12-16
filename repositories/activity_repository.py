@@ -52,5 +52,4 @@ def get_members(id):
     for row in results:
         member = Member(row['name'], row['id'])
         members.append(member)
-        pdb.set_trace()
     return members

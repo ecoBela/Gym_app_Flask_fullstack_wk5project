@@ -37,9 +37,9 @@ def create_activity():
 # SHOW
 @activities_blueprint.route("/activities/<id>/show", methods=['GET'])
 def show_members(id):
-    activity = activity_repository.select(id)
-    members = activity_repository.get_members(activity)
-    return render_template("/activities/show.html", members=members)
+    # activity = activity_repository.select(id)
+    members = activity_repository.get_members(id)
+    return render_template("activities/show.html", members=members)
 
 # EDIT
 
