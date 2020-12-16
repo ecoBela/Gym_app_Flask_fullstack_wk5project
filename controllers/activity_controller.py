@@ -33,13 +33,18 @@ def create_activity():
     return redirect("/activities")
 
 
+# SHOW
+@activities_blueprint.route("/activities/<id>/show", methods=['GET'])
+def show_members(id):
+    members = activity_repository.get_members(id)
+    return render_template("/activities/show.html", members=members)
+
 # EDIT
 
 @activities_blueprint.route("/activities/<id>/edit", methods=['GET'])
 def edit_activity(id):
     activity = activity_repository.select(id)
     return render_template("activities/edit.html", activity = activity)
-
 
 
 # UPDATE
@@ -56,4 +61,8 @@ def update_activity(id):
     activity = Activity(name, upcoming, id)
     activity_repository.update(activity)
     return redirect('/activities')
-# SHOW
+
+
+
+
+
