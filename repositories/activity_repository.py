@@ -18,6 +18,7 @@ def select_all():
     sql = "SELECT * FROM activities WHERE upcoming = True"
     results = run_sql(sql)
     return results
+
     
 #displays upcoming and past events
 def select_all_including_past():

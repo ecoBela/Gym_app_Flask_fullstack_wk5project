@@ -10,7 +10,8 @@ activities_blueprint = Blueprint("activties", __name__)
 @activities_blueprint.route("/activities")
 def activities():
     activities = activity_repository.select_all_including_past()
-    return render_template("activities/index.html", activities = activities)
+    upcoming = activity_repository.select_all()
+    return render_template("activities/index.html", activities = activities, upcoming=upcoming)
 
 # NEW
 
