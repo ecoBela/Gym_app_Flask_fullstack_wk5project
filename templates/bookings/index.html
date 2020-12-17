@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<a href="/bookings/new">***CREATE NEW BOOKING***</a>
+
+<br>
+<br>
+<h1>List of all bookings</h1>
+{% for booking in bookings %}
+    {{booking.member}} {{booking.activity}} <a href="/bookings/{{booking.id}}/edit">Update booking</a>
+    <br>
+    <br>
+{% endfor %}
+<br>
+<br>
+
+
+{% endblock %}

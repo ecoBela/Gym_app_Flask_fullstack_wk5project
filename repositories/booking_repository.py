@@ -14,7 +14,14 @@ def save(booking):
 
 
 ## Read
-
+def select_all():
+    bookings = []
+    sql = "SELECT * FROM bookings"
+    results = run_sql(sql)
+    for result in results:
+        booking = Booking(result["member"], result["activity"], result["id"])
+        bookings.append(booking)
+    return members
 
 # Update
 
