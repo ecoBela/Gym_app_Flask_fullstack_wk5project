@@ -7,9 +7,6 @@ members_blueprint = Blueprint("members", __name__)
 
 
 
-
-
-
 #INDEX
 @members_blueprint.route("/members")
 def members():

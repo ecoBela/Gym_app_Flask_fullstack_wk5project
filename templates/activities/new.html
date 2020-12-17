@@ -1,15 +1,13 @@
 Hello new activities!
+<h1>Create a new activity</h1>
+
+
 
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Create a new activity</h1>
-<br>
-<br>
-
-
 <form action="/activities" method="POST">
-    <div>
+    <div class="form-styles">
         <label for="name">Enter new activity:</label>
         <input type="text" id="name" name="name">
         <br>

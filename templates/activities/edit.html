@@ -1,11 +1,11 @@
 <h1>Edit activity details</h1>
-<br>
-<br>
 
+{% extends "base.html" %}
+{% block content %}
 
 
 <form action="/activities/{{activity.id}}" method="post">
-    <div>
+    <div class="form-styles">
         <label for="name">Enter activity name:</label>
         <input type="text" id="name" name="name" value = "{{activity.name}}">
         <br>
@@ -16,3 +16,4 @@
     </div>
 </form>
 
+{% endblock %}

@@ -1,6 +1,81 @@
-body            { font-family: sans-serif; background: #eee; }
-a, h1, h2       { color: #377ba8; }
-h1, h2          { font-family: 'Georgia', serif; margin: 0; }
-h1              { border-bottom: 2px solid #eee; }
-h2              { font-size: 1.2em; }
+/* Add styles to the following: 
 
+how do you style things inside the block content?  These files are injected 
+into the base.html, which is connected to this style sheet so 
+don't worry..they will pick up the styles too.
+
+
+form - but check where this is nexted amongst the elements e.g. within section
+
+h1 - but this is within the section in the block content area
+
+nav - this is in the base-html
+
+Lists of members and activities - remember that this is inside the {{}}
+
+Block content sections: this contains headings, forms and e/things...
+
+
+
+*/
+
+
+
+
+
+
+#site-header > nav > ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    justify-content: center;
+}
+
+#site-header > nav > ul > li {
+    margin: 15px;
+    font-size: 2em;
+}
+
+body{
+    /* background-color: rgb(223, 206, 238); */
+    background-image: linear-gradient(to bottom right, rgb(252, 221, 226), rgb(58, 116, 179));
+}
+/* body > main > section{
+    display: flex;
+    justify-content: center;
+} */
+
+.homepage-block-content{
+    display: flex;
+    justify-content: center;
+}
+
+.form-styles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    /* background-color: rgb(189, 170, 192); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+form > input, text {
+    background: pink;
+    display: flex;
+}
+
+button, input[type="submit"] {
+    width: auto;
+    padding: 9px 15px;
+    background: #1f061f;
+    border: 0;
+    font-size: 14px;
+    color: rgb(201, 183, 203);
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}

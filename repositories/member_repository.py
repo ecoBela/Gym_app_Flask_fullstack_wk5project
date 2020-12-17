@@ -12,7 +12,6 @@ def save(member):
 
 
 #CRUD: read
-#Do we need a def select() here?
 def select_all():
     members = []
     sql = "SELECT * FROM members"
@@ -29,10 +28,6 @@ def select(id):
     member = Member(result["name"], result["id"])
     return member
 
-
-# def select_all_by_activity():
-#     sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE bookings.activity_id = %s;"
-#     run_sql(sql)
 
 
 #CRUD: update
